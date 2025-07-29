@@ -20,11 +20,14 @@ A modern, user-friendly GUI application for managing Windows software packages u
 - **Tabbed Interface**: Organized interface with separate tabs for different functions
 
 ### User Interface
-- Clean and intuitive PyQt5-based GUI
-- Real-time search functionality
-- Double-click to install applications
-- Progress bars for installation status
+- Clean and intuitive PyQt5-based GUI with tabbed interface
+- **Search & Install Tab**: Real-time search functionality and easy installation
+- **Installed Apps Tab**: View all installed applications with versions
+- Double-click to install applications from search results
+- Double-click to uninstall applications from installed list
+- Progress bars for installation/uninstallation status
 - Success/error notifications
+- Refresh and update checking capabilities
 
 ## 🛠️ Technical Stack
 
@@ -120,20 +123,30 @@ The project includes a `main.spec` file for PyInstaller with the following setti
 1. **Launch Winstaller**
    - Run the executable or use `python main.py`
 
-2. **Search for Applications**
+2. **Search & Install Applications (Search & Install Tab)**
    - Type the name of the software you want to install in the search box
    - Click "Search" or press Enter
    - Browse through the search results
-
-3. **Install Applications**
-   - Double-click on any application from the search results
+   - Double-click on any application to install it
    - Confirm installation in the dialog box
-   - Wait for the installation to complete
-   - You'll see a success/error message when done
+
+3. **Manage Installed Applications (Installed Apps Tab)**
+   - Switch to the "Installed Apps" tab
+   - Click "Refresh Installed Apps" to see all installed applications and their versions
+   - Click "Show Available Updates" to see which apps can be upgraded
+   - Double-click on any installed application to uninstall it
+   - Confirm uninstallation in the dialog box
+
+4. **Monitor Progress**
+   - Watch progress bars during installation/uninstallation
+   - You'll see success/error messages when operations complete
 
 ### Advanced Features
 - **Silent Installation**: All installations are performed silently with automatic package agreement acceptance
-- **Background Processing**: Installations run in separate threads to keep the UI responsive
+- **Background Processing**: Installations and uninstallations run in separate threads to keep the UI responsive
+- **Version Tracking**: View current versions of all installed applications
+- **Update Management**: Check for and view available updates for installed software
+- **Confirmation Dialogs**: Safety prompts before uninstalling applications
 
 ## 🗂️ Project Structure
 
@@ -157,7 +170,8 @@ Winstaller/
 - [ ] **Batch Operations**: Install/uninstall multiple applications at once
 - [ ] **Favorites System**: Save frequently used applications
 - [ ] **Installation History**: Track installed applications and installation dates
-- [ ] **Update Notifications**: Check for available updates for installed software
+- [ ] **Automatic Updates**: One-click update all available applications
+- [ ] **Export/Import**: Export list of installed apps for backup/sharing
 
 ### Version 1.2.0
 - [ ] **Dark/Light Theme Toggle**: Customizable UI themes
@@ -196,6 +210,18 @@ Winstaller/
 - Check if the application is already installed
 - Verify sufficient disk space
 - Check antivirus software settings
+
+**Installed apps list is empty or incomplete**
+- Ensure you have some applications installed via winget
+- Try running `winget list` in PowerShell to verify winget can see installed apps
+- Some applications installed outside of winget may not appear
+- Click "Refresh Installed Apps" to reload the list
+
+**Uninstallation fails**
+- Run as administrator if needed
+- Some applications may require manual uninstallation
+- Check if the application is currently running and close it first
+- Try uninstalling directly through Windows Settings if winget fails
 
 ### Getting Help
 - Check the error messages in the application dialogs

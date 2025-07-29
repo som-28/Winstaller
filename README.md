@@ -15,7 +15,6 @@ A modern, user-friendly GUI application for managing Windows software packages u
 - **Upgrade Applications**: Update existing applications to their latest versions
 - **Progress Tracking**: Visual progress indicators during installation/uninstallation
 - **Threaded Operations**: Non-blocking UI with background installation processes
-- **Configuration Management**: JSON-based configuration system for future settings
 - **Error Handling**: Proper error messages and user feedback
 - **Tabbed Interface**: Organized interface with separate tabs for different functions
 
@@ -35,7 +34,6 @@ A modern, user-friendly GUI application for managing Windows software packages u
 - **Backend**: Python 3.x
 - **Package Manager**: Windows Package Manager (winget)
 - **Build Tool**: PyInstaller
-- **Configuration**: JSON-based config management
 
 ## 📋 Requirements
 
@@ -47,7 +45,6 @@ A modern, user-friendly GUI application for managing Windows software packages u
 ### Python Dependencies
 - PyQt5
 - subprocess (built-in)
-- json (built-in)
 - os (built-in)
 
 ## 🔧 Installation & Setup
@@ -111,11 +108,6 @@ A modern, user-friendly GUI application for managing Windows software packages u
 3. **Find your executable**
    The built executable will be in the `dist/` folder.
 
-### Build Configuration
-The project includes a `main.spec` file for PyInstaller with the following settings:
-- Single file executable (`--onefile`)
-- Windows application mode (`--windowed`, no console)
-- UPX compression enabled for smaller file size
 
 ## 📖 Usage Guide
 

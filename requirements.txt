@@ -1,0 +1,8 @@
+# Winstaller Requirements
+# Install these packages for full functionality
+
+# Core requirements
+PyQt5
+
+# Development requirements (optional)
+pyinstaller  # For building executables

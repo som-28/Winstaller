@@ -1,12 +1,12 @@
 # Winstaller
 
-**Version:** 1.0.0
+**Version:** 1.1.0
 
 A modern, user-friendly GUI application for managing Windows software packages using Windows Package Manager (winget). Winstaller provides an intuitive interface to search, install, uninstall, and upgrade applications on Windows systems.
 
 ## 🚀 Features
 
-### Current Features (v1.0.0)
+### Current Features (v1.1.0)
 - **Search Applications**: Search for available packages in the winget repository
 - **Install Applications**: Silent installation with package agreement acceptance
 - **View Installed Applications**: See all installed apps with their current versions
@@ -17,18 +17,60 @@ A modern, user-friendly GUI application for managing Windows software packages u
 - **Threaded Operations**: Non-blocking UI with background installation processes
 - **Error Handling**: Proper error messages and user feedback
 - **Tabbed Interface**: Organized interface with separate tabs for different functions
+- **🆕 Batch Operations**: Install/uninstall multiple applications at once with checkbox selection
+- **🆕 Favorites System**: Save frequently used applications for quick access
+- **🆕 Installation History**: Track installed applications and installation dates with detailed statistics
 
 ### User Interface
 - Clean and intuitive PyQt5-based GUI with tabbed interface
-- **Search & Install Tab**: Real-time search functionality and easy installation
-- **Installed Apps Tab**: View all installed applications with versions
+- **Search & Install Tab**: Real-time search functionality with batch installation capabilities
+- **Installed Apps Tab**: View all installed applications with batch uninstallation options
+- **🆕 Checkbox Selection**: Easy multi-selection with visual checkboxes for batch operations
+- **🆕 Smart Selection**: Toggle "Select All" / "Unselect All" buttons that adapt to current state
 - Double-click to install applications from search results
 - Double-click to uninstall applications from installed list
 - Progress bars for installation/uninstallation status
-- Success/error notifications
+- Success/error notifications with detailed batch operation results
 - Refresh and update checking capabilities
+- **🆕 Favorites Management**: Add selected applications to favorites for easy access
+- **🆕 Installation History Viewer**: View detailed history with filtering and statistics
 
-## 🛠️ Technical Stack
+## � Screenshots
+
+### 🔍 Search & Install Tab - Batch Operations
+![Search and Install](https://via.placeholder.com/800x500/3b82f6/ffffff?text=Search+%26+Install+Tab%0A%E2%9C%85+Checkbox+Selection%0A%F0%9F%93%A6+Batch+Install%0A%E2%AD%90+Add+to+Favorites)
+
+*Experience the power of batch operations with intuitive checkbox selection. Search for multiple applications and install them all at once, or add your favorites for quick access later.*
+
+---
+
+### 🗑️ Installed Apps Tab - Multi-Select Uninstall
+![Installed Apps](https://via.placeholder.com/800x500/ef4444/ffffff?text=Installed+Apps+Tab%0A%E2%98%91%EF%B8%8F+Multi-Select%0A%F0%9F%97%91%EF%B8%8F+Batch+Uninstall%0A%F0%9F%93%9C+View+History)
+
+*Manage your installed applications efficiently with batch uninstallation capabilities. Select multiple apps with checkboxes and remove them all in one operation.*
+
+---
+
+### 📊 Installation History - Detailed Tracking
+![Installation History](https://via.placeholder.com/800x500/8b5cf6/ffffff?text=Installation+History%0A%F0%9F%93%8A+Statistics%0A%F0%9F%94%8D+Filtering%0A%E2%8F%B0+Timestamps)
+
+*Keep track of all your installation and uninstallation activities with comprehensive history tracking, filtering options, and detailed statistics.*
+
+---
+
+### ⭐ Favorites System - Quick Access
+![Favorites Management](https://via.placeholder.com/800x500/f59e0b/ffffff?text=Favorites+System%0A%E2%AD%90+Save+Apps%0A%F0%9F%9A%80+Quick+Access%0A%F0%9F%92%BE+Persistent+Storage)
+
+*Save your frequently used applications to favorites for lightning-fast access. Perfect for developers and power users who install the same tools regularly.*
+
+---
+
+### 🎯 Smart Selection Features
+![Smart Selection](https://via.placeholder.com/800x500/10b981/ffffff?text=Smart+Selection%0A%E2%98%91%EF%B8%8F+Select+All%0A%E2%98%90+Unselect+All%0A%F0%9F%94%A2+Live+Counter)
+
+*Intelligent selection controls that adapt to your current state. The "Select All" button automatically becomes "Unselect All" when all items are selected, with live selection counters.*
+
+## �🛠️ Technical Stack
 
 - **Frontend**: PyQt5 (GUI Framework)
 - **Backend**: Python 3.x
@@ -78,7 +120,7 @@ A modern, user-friendly GUI application for managing Windows software packages u
 
 2. **Install Python dependencies**
    ```powershell
-   pip install PyQt5
+   pip install PyQt5 requests
    ```
 
 3. **Run the application**
@@ -119,19 +161,24 @@ A modern, user-friendly GUI application for managing Windows software packages u
    - Type the name of the software you want to install in the search box
    - Click "Search" or press Enter
    - Browse through the search results
-   - Double-click on any application to install it
+   - **🆕 Batch Installation**: Check boxes next to multiple applications and use "Install Selected"
+   - **🆕 Add to Favorites**: Select applications and click "Add to Favorites" for future quick access
+   - **Individual Installation**: Double-click on any application to install it immediately
    - Confirm installation in the dialog box
 
 3. **Manage Installed Applications (Installed Apps Tab)**
    - Switch to the "Installed Apps" tab
    - Click "Refresh Installed Apps" to see all installed applications and their versions
    - Click "Show Available Updates" to see which apps can be upgraded
-   - Double-click on any installed application to uninstall it
+   - **🆕 Batch Uninstallation**: Check boxes next to multiple applications and use "Uninstall Selected"
+   - **🆕 View Installation History**: Click "History" to see detailed installation/uninstallation records
+   - **Individual Uninstallation**: Double-click on any installed application to uninstall it
    - Confirm uninstallation in the dialog box
 
 4. **Monitor Progress**
    - Watch progress bars during installation/uninstallation
-   - You'll see success/error messages when operations complete
+   - You'll see detailed success/error messages when batch operations complete
+   - Real-time feedback shows current operation status
 
 ### Advanced Features
 - **Silent Installation**: All installations are performed silently with automatic package agreement acceptance
@@ -139,29 +186,44 @@ A modern, user-friendly GUI application for managing Windows software packages u
 - **Version Tracking**: View current versions of all installed applications
 - **Update Management**: Check for and view available updates for installed software
 - **Confirmation Dialogs**: Safety prompts before uninstalling applications
+- **🆕 Batch Operations**: Select multiple applications using checkboxes for efficient bulk operations
+- **🆕 Smart Selection**: "Select All" buttons automatically toggle to "Unselect All" when appropriate
+- **🆕 Favorites Management**: Save frequently used applications and access them quickly
+- **🆕 Installation History**: Comprehensive logging with filtering options and detailed statistics
+- **🆕 Progress Tracking**: Enhanced progress dialogs for batch operations with cancellation support
 
 ## 🗂️ Project Structure
 
 ```
 Winstaller/
 ├── main.py              # Application entry point
-├── main_window.py       # Main window class
-├── widgets.py           # Custom UI widgets (SearchWidget)
-├── dialogs.py           # Dialog windows (InstallDialog)
-├── winget_manager.py    # Winget operations manager
-├── config_manager.py    # Configuration management
-├── main.spec           # PyInstaller build configuration
-├── build/              # Build artifacts (generated)
-├── dist/               # Distribution files (generated)
-└── __pycache__/        # Python cache files (generated)
+├── package.png          # Application icon
+├── requirements.txt     # Python dependencies
+├── README.md           # Project documentation
+├── .gitignore          # Git ignore rules
+├── src/                # Source code directory
+│   ├── __init__.py     # Package initialization
+│   ├── main_window.py  # Main window class
+│   ├── widgets.py      # Custom UI widgets (SearchWidget, InstalledAppsWidget)
+│   ├── dialogs.py      # Dialog windows (InstallDialog, UninstallDialog)
+│   ├── winget_manager.py # Winget operations manager
+│   ├── cache_manager.py # Caching system for performance
+│   ├── config_manager.py # Configuration management
+│   ├── favorites_manager.py # 🆕 Favorites system manager
+│   └── installation_history.py # 🆕 Installation history tracking
+├── app_cache.json      # Application cache file
+├── main.spec          # PyInstaller build configuration
+├── build/             # Build artifacts (generated)
+├── dist/              # Distribution files (generated)
+└── CSHARP_PROJECT_PROMPT.md # C# rewrite specifications
 ```
 
 ## 🚧 Planned Features (Future Versions)
 
-### Version 1.1.0
-- [ ] **Batch Operations**: Install/uninstall multiple applications at once
-- [ ] **Favorites System**: Save frequently used applications
-- [ ] **Installation History**: Track installed applications and installation dates
+### Version 1.1.0 ✅ COMPLETED
+- [x] **Batch Operations**: Install/uninstall multiple applications at once
+- [x] **Favorites System**: Save frequently used applications
+- [x] **Installation History**: Track installed applications and installation dates
 - [ ] **Automatic Updates**: One-click update all available applications
 - [ ] **Export/Import**: Export list of installed apps for backup/sharing
 
@@ -259,4 +321,4 @@ For questions, suggestions, or support, please:
 
 **Made with ❤️ for the Windows community**
 
-*Last updated: July 29, 2025*
+*Last updated: August 3, 2025*

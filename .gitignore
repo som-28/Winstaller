@@ -1,4 +1,37 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
 build/
 dist/
+*.egg-info/
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Virtual environment
+.venv/
+venv/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cache files
 *.pyc
+app_cache.json
+
+# Removed features (no longer needed)
+icon_cache/
+icon_manager.py
+
+# OS files
+.DS_Store
+Thumbs.db
